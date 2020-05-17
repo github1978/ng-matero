@@ -1,7 +1,8 @@
 <div class="customizer-handle"
      matTooltip="Drag me around"
      cdkDrag
-     (cdkDragStarted)="handleDragStart($event)">
+     (cdkDragStarted)="handleDragStart($event)"
+     *ngIf="showToolBtn">
   <button mat-fab (click)="openPanel($event)">
     <mat-icon aria-label="Example icon-button with a settings icon">settings</mat-icon>
   </button>

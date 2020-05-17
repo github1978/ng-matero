@@ -90,6 +90,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.toggleCollapsed();
     setTimeout(() => (this.contentWidthFix = this.collapsedWidthFix = false));
   }
 

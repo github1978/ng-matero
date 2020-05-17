@@ -22,8 +22,8 @@
                  [opened]="options.navPos==='side' && options.sidenavOpened && !isOver"
                  (openedChange)="sidenavOpenedChange($event)"
                  (closedStart)="sidenavCloseStart()">
-      <app-sidebar [showToggle]="!isOver"
-                   [showUser]="options.showUserPanel"
+      <app-sidebar [showToggle]="false"
+                   [showUser]="false"
                    [showHeader]="options.headerPos!=='above'"
                    (toggleCollapsed)="toggleCollapsed()"
                    [toggleChecked]="options.sidenavCollapsed">

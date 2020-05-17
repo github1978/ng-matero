@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '@core';
 
 @Component({
   selector: 'app-translate',
   template: `
-    <button mat-icon-button class="matero-toolbar-button" [matMenuTriggerFor]="menu">
+    <button mat-icon-button class="matero-toolbar-button" [matMenuTriggerFor]="menu" *ngIf="showTranslate">
       <mat-icon>translate</mat-icon>
     </button>
 
@@ -24,6 +24,9 @@ import { SettingsService } from '@core';
   ],
 })
 export class TranslateComponent {
+
+  showTranslate = false;
+
   langs = {
     'en-US': 'English',
     'zh-CN': '中文简体',
@@ -33,7 +36,6 @@ export class TranslateComponent {
   constructor(public translate: TranslateService, private settings: SettingsService) {
     translate.addLangs(['en-US', 'zh-CN', 'zh-TW']);
     translate.setDefaultLang('en-US');
-
     const browserLang = navigator.language;
     translate.use(browserLang.match(/en-US|zh-CN|zh-TW/) ? browserLang : 'en-US');
   }

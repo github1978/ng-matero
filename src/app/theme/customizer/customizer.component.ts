@@ -12,6 +12,8 @@ export class CustomizerComponent implements OnInit {
   options = this.settings.getOptions();
   opened = false;
   dragging = false;
+  showToolBtn = false;
+
   @Output() optionsEvent = new EventEmitter<object>();
 
   constructor(private settings: SettingsService) {}
